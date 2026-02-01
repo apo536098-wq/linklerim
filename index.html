@@ -6,60 +6,99 @@
     <title>Kadir'in Dijital Terminali</title>
     <style>
         body { 
-            font-family: 'Consolas', 'Monaco', monospace; /* Hacker fontu */
+            font-family: 'Consolas', 'Monaco', monospace; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            background: #0d1117; /* GitHub koyu tema arka planı */
+            background: #0d1117; 
             margin: 0;
             height: 100vh;
-            color: #00ff41; /* Yeşil hacker yazıları */
-            overflow: hidden; /* Taşmayı engeller */
+            color: #00ff41; 
+            overflow: hidden; 
+            position: relative; /* Canvas için gerekli */
+        }
+        #matrixCanvas { /* Matrix efekti için tuval */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* İçeriğin arkasında kalmasını sağlar */
         }
         .container { 
+            position: relative; /* İçerik önde olsun */
+            z-index: 1; /* Matrixin üstünde kalması için */
             margin-top: 80px; 
             width: 90%; 
             max-width: 350px; 
             text-align: center; 
-            background: rgba(10, 20, 30, 0.8); /* Koyu yarı saydam terminal kutusu */
+            background: rgba(10, 20, 30, 0.8); 
             padding: 20px;
-            border-radius: 8px; /* Daha keskin köşeler */
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5); /* Yeşil parlama */
-            border: 1px solid #00ff41; /* Yeşil kenarlık */
+            border-radius: 8px; 
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5); 
+            border: 1px solid #00ff41; 
         }
         .link { 
             display: block; 
             padding: 15px; 
             margin: 15px 0; 
-            background: #00ff41; /* Link butonları yeşil */
-            color: #0d1117; /* Link yazıları koyu */
+            background: #00ff41; 
+            color: #0d1117; 
             text-decoration: none; 
-            border-radius: 5px; /* Daha keskin link butonları */
+            border-radius: 5px; 
             font-weight: bold; 
             transition: background 0.2s, color 0.2s;
         }
         .link:hover { 
-            background: #00e63d; /* Hoverda hafif koyulaşan yeşil */
+            background: #00e63d; 
             color: #000000;
         }
         h1 { 
             margin-bottom: 5px; 
-            text-shadow: 0 0 8px rgba(0, 255, 65, 0.7); /* Başlığa parlama */
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.7); 
         }
         p { 
             opacity: 0.9; 
             margin-bottom: 25px; 
-            color: #90ee90; /* Açıklama yazısı açık yeşil */
+            color: #90ee90; 
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <canvas id="matrixCanvas"></canvas> <div class="container">
         <h1>Kadir [root@terminal:~]</h1>
         <p>Bağlantılar Yükleniyor...</p>
         <a class="link" href="https://github.com/apo536098-wq" target="_blank">>> GitHub Profili</a>
         <a class="link" href="https://instagram.com/kadirerkannnn" target="_blank">>> Instagram Profili</a>
         <a class="link" href="mailto:eposta@adresin.com">>> E-posta Gönder</a>
-        <p>_</p> </div>
-</body>
-</html>
+        <p>_</p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const chars = katakana + latin + nums;
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Hafif karartma efekti
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0'; // Yeşil renk
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.
