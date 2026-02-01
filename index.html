@@ -3,55 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadir'in Bağlantıları</title>
+    <title>Kadir'in Dijital Terminali</title>
     <style>
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Consolas', 'Monaco', monospace; /* Hacker fontu */
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: #0d1117; /* GitHub koyu tema arka planı */
             margin: 0;
             height: 100vh;
-            color: white;
+            color: #00ff41; /* Yeşil hacker yazıları */
+            overflow: hidden; /* Taşmayı engeller */
         }
         .container { 
             margin-top: 80px; 
             width: 90%; 
             max-width: 350px; 
             text-align: center; 
-            background: rgba(255, 255, 255, 0.1); 
+            background: rgba(10, 20, 30, 0.8); /* Koyu yarı saydam terminal kutusu */
             padding: 20px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px); 
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 8px; /* Daha keskin köşeler */
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5); /* Yeşil parlama */
+            border: 1px solid #00ff41; /* Yeşil kenarlık */
         }
         .link { 
             display: block; 
             padding: 15px; 
             margin: 15px 0; 
-            background: white; 
-            color: #1e3c72; 
+            background: #00ff41; /* Link butonları yeşil */
+            color: #0d1117; /* Link yazıları koyu */
             text-decoration: none; 
-            border-radius: 12px; 
+            border-radius: 5px; /* Daha keskin link butonları */
             font-weight: bold; 
-            transition: transform 0.2s;
+            transition: background 0.2s, color 0.2s;
         }
         .link:hover { 
-            transform: scale(1.05); 
-            background: #f0f0f0;
+            background: #00e63d; /* Hoverda hafif koyulaşan yeşil */
+            color: #000000;
         }
-        h1 { margin-bottom: 5px; }
-        p { opacity: 0.8; margin-bottom: 25px; }
+        h1 { 
+            margin-bottom: 5px; 
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.7); /* Başlığa parlama */
+        }
+        p { 
+            opacity: 0.9; 
+            margin-bottom: 25px; 
+            color: #90ee90; /* Açıklama yazısı açık yeşil */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Kadir</h1>
-        <p>Dijital Kartvizit</p>
-        <a class="link" href="https://github.com/apo536098-wq" target="_blank">🚀 GitHub</a>
-        <a class="link" href="https://instagram.com/kadirerkannnn" target="_blank">📸 Instagram</a>
-        <a class="link" href="mailto:eposta@adresin.com">📧 İletişim</a>
-    </div>
+        <h1>Kadir [root@terminal:~]</h1>
+        <p>Bağlantılar Yükleniyor...</p>
+        <a class="link" href="https://github.com/apo536098-wq" target="_blank">>> GitHub Profili</a>
+        <a class="link" href="https://instagram.com/kadirerkannnn" target="_blank">>> Instagram Profili</a>
+        <a class="link" href="mailto:eposta@adresin.com">>> E-posta Gönder</a>
+        <p>_</p> </div>
 </body>
 </html>
