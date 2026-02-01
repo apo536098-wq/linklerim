@@ -2,21 +2,57 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Benim Bağlantılarım</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadir'in Bağlantıları</title>
     <style>
-        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #f0f2f5; }
-        .container { margin-top: 50px; width: 300px; text-align: center; }
-        .link { display: block; padding: 15px; margin: 10px 0; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
-        .link:hover { background: #0056b3; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            /* Havalı Arka Plan Geçişi */
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            margin: 0;
+            height: 100vh;
+            color: white;
+        }
+        .container { 
+            margin-top: 80px; 
+            width: 90%; 
+            max-width: 350px; 
+            text-align: center; 
+            background: rgba(255, 255, 255, 0.1); /* Yarı saydam arka plan */
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px); /* Cam efekti */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .link { 
+            display: block; 
+            padding: 15px; 
+            margin: 15px 0; 
+            background: white; 
+            color: #1e3c72; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            transition: transform 0.2s;
+        }
+        .link:hover { 
+            transform: scale(1.05); /* Üzerine gelince büyüme efekti */
+            background: #f0f0f0;
+        }
+        h1 { margin-bottom: 5px; }
+        p { opacity: 0.8; margin-bottom: 25px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Selam!</h1>
-        <p>Beni takip edebilirsiniz:</p>
-        <a class="link" href="https://github.com/KULLANICI_ADIN">GitHub Profilim</a>
-        <a class="link" href="https://twitter.com/KULLANICI_ADIN">Twitter</a>
-        <a class="link" href="mailto:eposta@adresin.com">E-posta Gönder</a>
+        <h1>Kadir</h1>
+        <p>Dijital Kartvizit</p>
+        <a class="link" href="https://github.com/KULLANICI_ADIN" target="_blank">🚀 GitHub</a>
+        <a class="link" href="https://instagram.com/KULLANICI_ADIN" target="_blank">📸 Instagram</a>
+        <a class="link" href="mailto:eposta@adresin.com">📧 İletişim</a>
     </div>
 </body>
 </html>
